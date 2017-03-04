@@ -1,9 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Crystal Game</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+	<meta name="viewpoint" content="width=device-width, intial-scale=1">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<
+
 </head>
 <body>
+	<div class="container">
+		<div class="row">
+			<h1 class="jumbotron">Crystals Collector</h1>
+		</div>
+		<div id="game-rules" class="row">
+			<div class="col-lg-5">
+				You will be given a random number at the start of the game.
+				<br/>
+				<br/>
+				There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.
+				<br/>
+				<br/>
+				You win the game by matching the total score to the random number.  You lose the game if your total score goes above the random number.
+				<br/>
+				<br/>
+				The value of each crystal is hidden from you until you click on it.
+				<br/>
+				<br/>
+				Each time when the game starts, the game will change the values of each crystal.
+				<br/>
+				<br/>
+				<button type="button" id="start" class="bton btn-success">Start</button>
+				<button type="button" id="reset" class="bton btn-primary">Reset</button>
+			</div>
+			<div class="col-lg-7">
+				<div class="row">
+					<div id="random-score" class="col-sm-8"></div>
+					<div class="col-sm-4 tally">
+						<p id="win-count">Wins:</p>
+						<br/>
+						<p id="loss-count">Losses:</p>
+					</div>
+				</div>
+				<div class="row">
+					<button id="button-1" class="btn btn-default"><img src="./assets/images/blue_gem.jpg" class="gem-pic"></button>
+					<button id="button-2" class="btn btn-default"><img src="./assets/images/green_gem.jpg" class="gem-pic"></button>
+					<button id="button-3" class="btn btn-default"><img src="./assets/images/purple_gem.jpg" class="gem-pic"></button>
+					<button id="button-4" class="btn btn-default"><img src="./assets/images/red_gem.jpg" class="gem-pic"></button>
+				</div>
+				<div class="row">
+					<p id="total-score">Your total score is: </p> 
+				</div>
+				<div id="gem-total" class="row"></div>
+			</div>
+		</div>
 
+	
+	</div>
+
+	<script src="./assets/javascript/game.js"></script>
 </body>
 </html>
