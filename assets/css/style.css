@@ -1,8 +1,55 @@
 .jumbotron {
 	background-color: #ffffcc;
+	text-align: center;
+	font-weight: bolder;
+	margin-bottom: 0px;
+}
+
+.summary {
+	background-color: #e8685a;
+	border: solid;
 }
 
 .gem-pic {
 	height: 120px;
 	width: 120px;
 }
+
+#random-score {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#game-stats {
+	background-color: #b3f0ff;
+	border: solid;
+	border-radius: 5px;
+}
+
+#gem-collection {
+	text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+
+#gem-collection a {
+	vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+
+.user-score {
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+}
+
+

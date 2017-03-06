@@ -9,6 +9,11 @@ var userScore = 0;
 var wins = 0;
 var losses = 0;
 
+	var $totalScore = $("#total-score");
+	var $randomScore = $("#random-score");
+	var $winCount = $("#win-count");
+	var $lossCount = $("#loss-count");
+
 //prevents players from clicking the gems until the game is started
 document.getElementById("button-1").disabled = true;
 document.getElementById("button-2").disabled = true;
@@ -18,15 +23,15 @@ document.getElementById("button-4").disabled = true;
 //set random goal and gem values
 
 $("#start").on("click", function(){
-	randomGoal = Math.floor((Math.random() * 100) + 15);
+	randomGoal = Math.floor((Math.random() * 120) + 19);
 	console.log(randomGoal);
-	$("#random-score").text("Goal: " + randomGoal);
+	$randomScore.text("Goal: " + randomGoal);
 
 
-	gemBlueValue = Math.floor((Math.random() * 15) + 1);
-	gemGreenValue = Math.floor((Math.random() * 15) + 1);
-	gemPurpleValue = Math.floor((Math.random() * 15) + 1);
-	gemRedValue = Math.floor((Math.random() * 15) + 1);
+	gemBlueValue = Math.floor((Math.random() * 12) + 1);
+	gemGreenValue = Math.floor((Math.random() * 12) + 1);
+	gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+	gemRedValue = Math.floor((Math.random() * 12) + 1);
 	console.log(gemBlueValue);
 
 	document.getElementById("button-1").disabled = false;
@@ -39,35 +44,51 @@ $("#start").on("click", function(){
 //on click adds gem value to total score
 $("#button-1").on("click", function(){
 	if (userScore == 0) {
-		$("#total-score").text(gemBlueValue);
+		$totalScore.text(gemBlueValue);
 		userScore = gemBlueValue;
 	}
 
 	else {
 		userScore += gemBlueValue;
-		$("#total-score").text(userScore);
+		$totalScore.text(userScore);
 	}
 
 	//checks to see if the game is won or lost 
 	if (userScore === randomGoal) {
 			wins++;
 			console.log(wins);
-			$("#win-count").text(wins);
+			$winCount.text(wins);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			console.log(gemBlueValue);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 	else if (userScore > randomGoal) {
 			losses++;
-			$("#loss-count").text(losses);
+			$lossCount.text(losses);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			console.log(gemBlueValue);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 
@@ -75,33 +96,47 @@ $("#button-1").on("click", function(){
 
 $("#button-2").on("click", function(){
 	if (userScore == 0) {
-		$("#total-score").text(gemGreenValue);
+		$totalScore.text(gemGreenValue);
 		userScore = gemGreenValue;
 	}
 	else {
 			userScore += gemGreenValue;
-			$("#total-score").text(userScore);
+			$totalScore.text(userScore);
 		}
 
 	if (userScore === randomGoal) {
 			wins++;
 			console.log(wins);
-			$("#win-count").text(wins);
+			$winCount.text(wins);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 	else if (userScore > randomGoal) {
 			losses++;
-			$("#loss-count").text(losses);
+			$lossCount.text(losses);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 		
 });
@@ -109,79 +144,113 @@ $("#button-2").on("click", function(){
 
 $("#button-3").on("click", function(){
 	if (userScore == 0) {
-		$("#total-score").text(gemPurpleValue);
+		$totalScore.text(gemPurpleValue);
 		userScore = gemPurpleValue;
 	}
 
 	else {
 		userScore += gemPurpleValue;
-		$("#total-score").text(userScore);
+		$totalScore.text(userScore);
 	}
 
 	if (userScore === randomGoal) {
 			wins++;
 			console.log(wins);
-			$("#win-count").text(wins);
+			$winCount.text(wins);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 	else if (userScore > randomGoal) {
 			losses++;
-			$("#loss-count").text(losses);
+			$lossCount.text(losses);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 });
 
 $("#button-4").on("click", function(){
 	if (userScore == 0) {
-		$("#total-score").text(gemRedValue);
+		$totalScore.text(gemRedValue);
 		userScore = gemRedValue;
 	}
 	else {
 			userScore += gemRedValue;
-			$("#total-score").text(userScore);
+			$totalScore.text(userScore);
 		}
 
 	if (userScore === randomGoal) {
 			wins++;
 			console.log(wins);
-			$("#win-count").text(wins);
+			$winCount.text(wins);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 	else if (userScore > randomGoal) {
 			losses++;
-			$("#loss-count").text(losses);
+			$lossCount.text(losses);
+			
 			userScore = 0;
-			$("#total-score").text(0);
-			randomGoal = Math.floor((Math.random() * 100) + 15);
+			$totalScore.text(0);
+			
+			randomGoal = Math.floor((Math.random() * 120) + 19);
 			console.log(randomGoal);
-			$("#random-score").text("Goal: " + randomGoal);
+			$randomScore.text("Goal: " + randomGoal);
+			
+			gemBlueValue = Math.floor((Math.random() * 12) + 1);
+			gemGreenValue = Math.floor((Math.random() * 12) + 1);
+			gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+			gemRedValue = Math.floor((Math.random() * 12) + 1);
 	}
 
 });
 
 $("#restart").on("click", function(){
 	wins = 0;
-	$("#win-count").text(wins);
+	$winCount.text(wins);
 	losses = 0;
-	$("#loss-count").text(losses);
+	$lossCount.text(losses);
+	
 	userScore = 0;
-	$("#total-score").text(0);
-	randomGoal = Math.floor((Math.random() * 100) + 15);
-	$("#random-score").text("Goal: " + randomGoal);
+	$totalScore.text(0);
+	randomGoal = Math.floor((Math.random() * 120) + 19);
+	$randomScore.text("Goal: " + randomGoal);
+	
+	gemBlueValue = Math.floor((Math.random() * 12) + 1);
+	gemGreenValue = Math.floor((Math.random() * 12) + 1);
+	gemPurpleValue = Math.floor((Math.random() * 12) + 1);
+	gemRedValue = Math.floor((Math.random() * 12) + 1);
 
 });
 

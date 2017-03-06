@@ -4,7 +4,11 @@
 	<title>Crystal Game</title>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css">
 	<meta name="viewpoint" content="width=device-width, intial-scale=1">
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -12,12 +16,13 @@
 
 </head>
 <body>
+
 	<div class="container">
 		<div class="row">
 			<h1 class="jumbotron">Crystals Collector</h1>
 		</div>
 		<div id="game-rules" class="row">
-			<div class="col-lg-5">
+			<div class="col-lg-5 summary">
 				You will be given a random number at the start of the game.
 				<br/>
 				<br/>
@@ -39,27 +44,28 @@
 			<div class="col-lg-7">
 				<div class="row">
 					<div id="random-score" class="col-sm-8">Goal: </div>
-					<div class="col-sm-4 tally">
+					<div id="game-stats" class="col-sm-4">
 						<p>Wins: <div id="win-count"></div></p>
 						<p>Losses: <div id="loss-count"></div></p>
 					</div>
 				</div>
-				<div class="row">
+				<div id="gem-collection" class="row">
 					<button id="button-1" class="btn btn-default"><img src="./assets/images/blue_gem.jpg" class="gem-pic"></button>
 					<button id="button-2" class="btn btn-default"><img src="./assets/images/green_gem.jpg" class="gem-pic"></button>
 					<button id="button-3" class="btn btn-default"><img src="./assets/images/purple_gem.jpg" class="gem-pic"></button>
 					<button id="button-4" class="btn btn-default"><img src="./assets/images/red_gem.jpg" class="gem-pic"></button>
+					<span class="stretch"></span>
 				</div>
 				<div class="row">
-					<p>Your total score is: <div id="total-score"></div></p> 
+					<p class="user-score">Your total score is: <div id="total-score" class="user-score"></div></p> 
 				</div>
 				<div id="gem-total" class="row"></div>
 			</div>
 		</div>
 
-	
-	</div>
 
+	</div>
+	
 	<script src="./assets/javascript/game.js"></script>
 </body>
 </html>
